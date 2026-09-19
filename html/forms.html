@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulário Alinhado</title>
+    <link rel="stylesheet" href="../css/styleforms.css">
+</head>
+<body>
+    <nav class="menu-principal">
+    <a href="../index.html">Home</a> | 
+    <a href="fonte.html">Fontes</a> | 
+    <a href="variastags.html">Tags</a> | 
+    <a href="listas.html">Listas</a> | 
+    <a href="tabelas.html">Tabelas</a> | 
+    <a href="forms.html">Forms</a>
+</nav>
+
+    <h1>Formulário</h1>
+
+    <form action="#" method="post">
+        
+        <!-- Seção: Dados Pessoais -->
+        <fieldset>
+            <legend>Dados pessoais</legend>
+            
+            <div class="linha">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome">
+            </div>
+            
+            <div class="linha">
+                <label for="endereco">Endereço:</label>
+                <input type="text" id="endereco" name="endereco">
+            </div>
+            
+            <div class="linha">
+                <label for="cidade">Cidade:</label>
+                <input type="text" id="cidade" name="cidade">
+            </div>
+            
+            <div class="linha">
+                <label for="estado">Estado:</label>
+                <select id="estado" name="estado">
+                    <option value="SP" selected>São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="MG">Minas Gerais</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <!-- Seção: Dados Profissionais -->
+        <fieldset>
+            <legend>Dados profissionais</legend>
+            
+            <div class="bloco-opcoes">
+                <p>Natureza do Cargo:</p>
+                <div class="opcoes-container">
+                    <label><input type="radio" name="cargo" value="gerencia" checked> Gerência</label>
+                    <label><input type="radio" name="cargo" value="financeiro"> Financeiro</label>
+                    <label><input type="radio" name="cargo" value="recepcao"> Recepção</label>
+                    <label><input type="radio" name="cargo" value="administrativo"> Administrativo</label>
+                    <label><input type="radio" name="cargo" value="juridico"> Jurídico</label>
+                </div>
+            </div>
+
+            <div class="bloco-opcoes">
+                <p>Área de interesse:</p>
+                <div class="opcoes-container">
+                    <label><input type="checkbox" name="interesse" value="computacao"> Computação</label>
+                    <label><input type="checkbox" name="interesse" value="biologia"> Biologia</label>
+                    <label><input type="checkbox" name="interesse" value="meio_ambiente"> Meio Ambiente</label>
+                    <label><input type="checkbox" name="interesse" value="engenharia"> Engenharia</label>
+                    <label><input type="checkbox" name="interesse" value="historia"> História</label>
+                </div>
+            </div>
+
+            <div class="textarea-container">
+                <label for="curriculo">Mini-currículo:</label>
+                <textarea id="curriculo" name="curriculo" rows="5"></textarea>
+            </div>
+        </fieldset>
+
+        <!-- Botões -->
+        <div class="botoes">
+            <input type="submit" value="Enviar">
+            <input type="reset" value="Limpar">
+        </div>
+
+    </form>
+
+</body>
+</html>

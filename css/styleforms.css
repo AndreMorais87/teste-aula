@@ -1,0 +1,205 @@
+/* Reset básico para manter as caixas uniformes */
+* {
+    box-sizing: border-box;
+}
+
+.menu-principal {
+    display: flex; /* Coloca os itens lado a lado */
+    justify-content: center; /* Centraliza o menu na tela */
+    align-items: center; /* Alinha os textos e os tracinhos na mesma altura */
+    gap: 10px; /* Dá um pequeno respiro/espaço entre os links e os tracinhos */
+    
+    width: 100%; /* Garante que o menu ocupe a largura toda para poder centralizar */
+    margin-bottom: 30px; /* Dá um espaço entre o menu e o título/formulário abaixo dele */
+    
+    /* Opcional: Adicionando uma cor de fundo ou estilo para destacar */
+    background-color: rgba(0, 0, 0, 0.40);
+    padding: 15px;
+    border-radius: 8px;
+
+    color: #f27405;
+}
+
+/* Deixando os links mais bonitos */
+.menu-principal a {
+    text-decoration: none; /* Tira aquele sublinhado feio padrão dos links */
+    color: #ffffff; /* Cor do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+
+.menu-principal a:hover {
+    color: #0066cc; /* Muda a cor quando passar o mouse por cima */
+}
+
+body {
+    background-image: url('../imagens/solo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Verdana', Tahoma, Geneva, Segoe UI, sans-serif;
+    display: flex;
+    flex-direction: column; /* Coloca o Título e o Formulário um embaixo do outro */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center;
+}
+
+h1 {
+    font-family: "Times New Roman", serif;
+    color: #f27405;
+}
+
+form {
+    max-width: 600px; /* Limita a largura do formulário para não esticar na tela toda */
+    background-color: rgba(0, 0, 0, 0.40);
+    padding: 20px;
+    border-radius: 8px; /* Bordas arredondadas modernas */
+    border: 1px solid #ffffff;
+    color: #f27405;
+}
+fieldset {
+    margin-bottom: 20px;
+    padding: 15px 20px;
+    border: 1px solid #ffffff;
+}
+
+legend {
+    padding: 0 5px;
+    font-weight: bold;
+}
+
+/* =========================================
+   AQUI ACONTECE O ALINHAMENTO E CORES DOS INPUTS
+   ========================================= */
+.linha {
+    display: flex;
+    align-items: center; 
+    margin-bottom: 10px;
+}
+
+.linha label {
+    width: 85px; 
+    text-align: right; 
+    margin-right: 10px;
+}
+
+.linha input[type="text"],
+.linha select,
+.textarea-container textarea {
+    flex: 1; /* A caixa de texto vai ocupar todo o espaço restante */
+    padding: 6px;
+    background-color: rgba(255, 255, 255, 0.65);
+    border: 1px solid #005599;
+    color: #000000;
+    border-radius: 4px;
+}
+
+/* =========================================
+   ALINHAMENTO DOS RADIOS E CHECKBOXES
+   ========================================= */
+.bloco-opcoes {
+    margin-bottom: 15px;
+}
+
+.bloco-opcoes p {
+    margin: 0 0 8px 0;
+}
+
+.opcoes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Cria um espaçamento exato e uniforme entre as opções */
+}
+
+.opcoes-container label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* =========================================
+   CUSTOMIZANDO RADIOS E CHECKBOXES (TAMANHO PADRÃO)
+   ========================================= */
+
+/* 1. Desenhando o botão no estado "NÃO SELECIONADO" */
+.opcoes-container input {
+    -webkit-appearance: none;
+    appearance: none;
+    
+    /* AQUI: Ajustado para o tamanho padrão do navegador */
+    width: 14px;
+    height: 14px;
+    
+    background-color: rgba(255,255,255,0.65); 
+    border: 2px solid #901a19; 
+    
+    margin-right: 5px;
+    cursor: pointer;
+    position: relative; 
+}
+
+.opcoes-container input[type="radio"] {
+    border-radius: 50%;
+}
+
+.opcoes-container input[type="checkbox"] {
+    border-radius: 3px; /* Diminui um pouquinho o arredondamento também */
+}
+
+/* ========================================= */
+/* 2. O que acontece quando o botão é CLICADO (:checked) */
+/* ========================================= */
+.opcoes-container input:checked {
+    background-color: #901a19; 
+    border-color: rgba(255,0,0,0.15);
+}
+
+/* Ajustando o tamanho da bolinha do radio */
+.opcoes-container input[type="radio"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 3px;
+    height: 3px;
+    background-color: rgba(255,255,255,0.65);
+    border-radius: 50%;
+}
+
+/* Ajustando o tamanho do "V" dentro do checkbox */
+.opcoes-container input[type="checkbox"]:checked::after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 0px;
+    width: 3px;
+    height: 6px;
+    border: solid white;
+    border-width: 0 2px 2px 0; 
+    transform: rotate(45deg); 
+}
+
+/* =========================================
+   ALINHAMENTO DO TEXTAREA
+   ========================================= */
+.textarea-container {
+    display: flex;
+    align-items: flex-start; /* Alinha o texto "Mini-currículo:" no topo da caixa */
+    margin-top: 20px;
+}
+
+.textarea-container label {
+    width: 100px; /* Largura fixa para a label do textarea */
+    text-align: right;
+    margin-right: 10px;
+}
+
+.textarea-container textarea {
+    flex: 1; /* Ocupa o restante da tela */
+    resize: vertical; /* Permite aumentar apenas para baixo, não para os lados */
+}
+
+/* Botões */
+.botoes {
+    margin-top: 15px;
+}
